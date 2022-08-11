@@ -8,7 +8,6 @@ pytest = "*"
 django = "*"
 djangorestframework = "*"
 python-dotenv = "*"
-now = "*"
 black = "*"
 
 [dev-packages]
