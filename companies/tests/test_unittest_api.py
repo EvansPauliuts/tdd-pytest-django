@@ -120,10 +120,10 @@ def func_that_log_something() -> None:
 
 def test_logged_warning_level(caplog) -> None:
     func_that_log_something()
-    assert 'I am logging Exception' in caplog.text
+    assert "I am logging Exception" in caplog.text
 
 
 def test_logged_info_level(caplog) -> None:
     with caplog.at_level(logging.INFO):
-        logger.info('I am logging level')
-        assert 'I am logging level' in caplog.text
+        logger.info("I am logging level")
+        assert "I am logging level" in caplog.text

@@ -18,4 +18,11 @@ test_time:
 
 test_parameter:
 	pytest ./companies/tests/test_unittest_api.py -k $(arg)
-	@echo "Testing add string parameter!!!"
+	@echo "Testing add string parameter='parameter'!!!"
+
+test_arg:
+	pytest -v -s --durations=0 -k $(arg)
+	@echo "Testing add string arg='arg'!!!"
+
+test_class_method:
+	pytest -v -s --durations=0 ./companies/tests/test_unittest_api.py::TestGetCompanies::test_zero_companies_should_return_empty_list
