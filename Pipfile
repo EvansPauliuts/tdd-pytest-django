@@ -9,6 +9,8 @@ django = "*"
 djangorestframework = "*"
 python-dotenv = "*"
 black = "*"
+pytest-django = "*"
+pytz = "*"
 
 [dev-packages]
 
