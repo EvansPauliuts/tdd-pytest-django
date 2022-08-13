@@ -21,8 +21,8 @@ class CompanyViewSet(ModelViewSet):
 @api_view(http_method_names=["POST"])
 def send_company_email(request: Request) -> Response:
     send_mail(
-        subject=request.data.get('subject'),
-        message=request.data.get('message'),
+        subject=request.data.get("subject"),
+        message=request.data.get("message"),
         from_email=os.getenv("EMAIL_HOST_USER"),
         recipient_list=[os.getenv("EMAIL_HOST_USER")],
     )
