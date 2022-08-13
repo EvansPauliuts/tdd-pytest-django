@@ -11,6 +11,7 @@ python-dotenv = "*"
 black = "*"
 pytest-django = "*"
 pytz = "*"
+pytest-cov = "*"
 
 [dev-packages]
 

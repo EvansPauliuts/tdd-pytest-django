@@ -47,6 +47,20 @@ jobs:
           echo ALLOWED_HOSTS="$ALLOWED_HOSTS" >> .env
         shell: bash
 
+      - name: Run black
+        run: black .
+
       - name: Run tests
         run: |
           pipenv run pytest -v -s --durations=0
+
+       - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+
+      - name: Upload coverage reports to Codecov
+        env:
+          SUPER_SECRET: ${{ secrets.CODECOV_TOKEN }}
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov -t "%SUPER_SECRET%"

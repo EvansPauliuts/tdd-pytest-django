@@ -1,4 +1,4 @@
-PHONY: black run test test_time
+PHONY: black run test test_time test_cov
 
 black:
 	black .
@@ -11,6 +11,10 @@ run:
 test:
 	pytest -v -s
 	@echo "Testing!!!"
+
+test_cov:
+	pytest -s -v --durations=0 --cov=.
+	@echo "Testing cov!!!"
 
 test_time:
 	pytest -v -s --durations=0
