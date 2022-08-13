@@ -14,7 +14,7 @@ class EmailUnitTest(TestCase):
             self.assertEqual(len(mail.outbox), 0)
 
             mail.send_mail(
-                subject="Test #1",
+                subject="Test",
                 message="test",
                 from_email=os.getenv("EMAIL_HOST_USER"),
                 recipient_list=[os.getenv("EMAIL_HOST_USER")],
@@ -22,7 +22,7 @@ class EmailUnitTest(TestCase):
             )
 
             # self.assertEqual(len(mail.outbox), 1)
-            self.assertEqual(mail.outbox[0].subject, "Test #1")
+            self.assertEqual(mail.outbox[0].subject, "Test")
 
     def test_send_email_without_arguments_should_send_empty_email(self) -> None:
         client = Client()
